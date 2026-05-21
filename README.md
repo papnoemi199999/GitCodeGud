@@ -1,86 +1,86 @@
-# GitCodeGud 🚀
-## Competition: 🏆
-**boot.dev, devActivity, BountyHub**
+# GitCodeGud
 
-- On **boot.dev** 📚, users can learn programming and earn XP in the process.
-- On **devActivity** 🛠️, users can gain experience while contributing to a project and earn XP.
-- On **BountyHub** 💰, users can fix bugs in other people’s repositories for money, but the platform lacks skill progression, personal development features, and gamification.
+Gamified collaborative platform for software developers built to help programmers gain real-world experience by solving issues and contributing to open-source projects.
 
-## Description: 📝
-This application would assist programmers by allowing them to link their git repositories to the GitCodeGud platform. This way, they can work on their tasks as usual, but on the GitCodeGud platform, other programmers can fix bugs in other people’s projects in exchange for XP. Additional XP can also be earned for successful pull requests or even for discovering a bug (fixed amount).
+GitCodeGud connects GitHub, GitLab and Bitbucket repositories with a bounty-based system where developers can complete tasks, submit merge requests and earn XP through community-driven collaboration.
 
-## Theme: 🐞🎮
- Bug hunting, with a modern, more engaging look and feel.
+---
 
-## Technology stack: 🧑‍💻
-- GitHub/~~GitLab~~ login using OAuth2 (Laravel Socialite) 🔑
-- PostgreSQL database for storing data 🗄️
-- Vue.js, Tailwind CSS – frontend 🎨
-- Laravel – backend ⚙️
+## Application Preview
 
-## Setup: ⚡
-### Prerequisites: 📋
-- PHP >= 8.1
-- Composer
-- Node.js >= 16
-- npm
-- PostgreSQL
-- Git
 
-### Installation: 🛠️
-1. Clone the repository: 📥
-    ```bash
-   git clone https://github.com/Ag4Hz/GitCodeGud.git
-   ```
-2. Navigate to the project directory: 📂
-    ```bash
-   cd GitCodeGud
-   ```
-3. Install dependencies using Composer: 🎼
-    ```bash
-    composer install
-    ```
-4. Install frontend dependencies using npm: 📦
-    ```bash
-    npm install
-    ```
-5. Copy the example environment file and configure it: 📝
-    ```bash
-    cp .env.example .env
-    ```
-    #### Variables to set in the `.env` file: ⚙️
-   - DB_CONNECTION=pgsql
-   - DB_HOST=<your_database_host>
-   - DB_PORT=<your_database_port>
-   - DB_DATABASE=<your_database_name>
-   - DB_USERNAME=<your_database_username>
-   - DB_PASSWORD=<your_database_password>
-   - GITHUB_CLIENT_ID=<your_github_client_id>
-   - GITHUB_CLIENT_SECRET=<your_github_client_secret>
-   - GITHUB_REDIRECT_URL=http://localhost:8000/auth/github/callback
 
-### Setting up GitHub OAuth App: 🔐
-1. Go to [GitHub Developer Settings] ⚙️
-2. Click on "New OAuth App". ➕
-3. Fill in the required fields: 📝
-    - Application Name: GitCodeGud
-    - Homepage URL: http://localhost:8000
-    - Authorization Callback URL: http://localhost:8000/auth/github/callback
-4. After creating the app, you will get the Client ID and Client Secret. Use these values in your `.env` file. 🔑
+![Home](docs/images/home.png)
+![Leaderboard](docs/images/leaderboard.png)
+![Create bounty page](docs/images/create_bounty.png)
+![Profile page](docs/images/profile.png)
 
-### Database setup: 🗄️
-1. Create a PostgreSQL database for the application. 🏗️
-2. Run the migrations to set up the database schema: 🏃
-    ```bash
-    php artisan migrate
-    ```
-3. (Optional) Seed the database with initial data: 🌱
-    ```bash
-    php artisan db:seed
-    ```
+---
 
-### Running the application: ▶️
-1. Start the Laravel development server: 🖥️
-    ```bash
-   composer run dev
-    ```
+## Features
+
+- OAuth2 authentication with Laravel Socialite (GitHub, GitLab, Bitbucket)
+- Repository synchronization from external Git providers
+- Bounty-based issue system
+- XP and leaderboard system
+- Pull request / merge request submission flow
+- Repository and issue discovery
+- User profiles and follower system
+- Review and feedback system
+- Organization support
+- Search, filtering and sorting for bounties
+- Responsive modern frontend
+
+---
+
+## How It Works
+
+1. Users authenticate using OAuth2 with GitHub, GitLab or Bitbucket
+2. External repositories are synchronized into the platform
+3. Repository owners create bounties for issues
+4. Developers claim bounties and submit pull requests or merge requests
+5. Accepted contributions reward users with XP
+6. XP contributes to the global leaderboard and developer progression system
+
+
+---
+
+## My Contributions
+
+My main contributions to the project included:
+
+- OAuth integration
+- GitLab repository synchronization
+- Leaderboard implementation
+- Followers system
+- Reviews system
+- Frontend implementation and UI improvements
+
+
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Backend | Laravel |
+| Frontend | Vue.js / React |
+| Authentication | Laravel Socialite (OAuth2) |
+| Database | PostgreSQL |
+| APIs | GitHub API, GitLab API, Bitbucket API |
+
+---
+
+
+## Running Locally
+
+```bash
+# Install dependencies
+composer install
+npm install
+
+# Prepare database
+php artisan migrate
+
+# Run app
+composer run dev
+```
