@@ -56,20 +56,36 @@ My main contributions to the project included:
 - Reviews system
 - Frontend implementation and UI improvements
 
-
+---
 
 ## Tech Stack
 
 | Layer | Technology |
 |---|---|
 | Backend | Laravel |
-| Frontend | Vue.js / React |
+| Frontend | Vue.js |
 | Authentication | Laravel Socialite (OAuth2) |
 | Database | PostgreSQL |
 | APIs | GitHub API, GitLab API, Bitbucket API |
 
 ---
 
+## Architecture
+
+```
+Frontend
+    |
+Laravel Backend
+    |
+    ├── OAuth Providers
+    ├── Repository Sync
+    ├── XP & Leaderboard
+    ├── Bounty System
+    └── Social Features
+```
+## Setup & Secrets
+
+- Fill the `.env` with required secrets (see `.env.example`).
 
 ## Running Locally
 
